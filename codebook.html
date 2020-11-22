@@ -533,11 +533,16 @@ summary {
 ## [66] “frequencyBodyGyroscopeJerkMagnitude-std()”<br />
 ## [67] “subject”<br />
 ## [68] “activity” Creates a second,independent tidy data set and ouput it In this part,a second, independent tidy data set will be created with the average of each variable for each activity and each subject based on the data set in step 4.</p>
-<p>library(plyr); Data2&lt;-aggregate(. ~subject + activity, Data, mean) Data2&lt;-Data2[order(Data2<span class="math inline">\(subject,Data2\)</span>activity),] write.table(Data2, file = “tidydata.txt”,row.name=FALSE) Prouduce Codebook library(knitr) knit2html(“codebook.Rmd”); ## ## ## processing file: codebook.Rmd ## |<br />
-| | 0% |<br />
-|…………………. | 33% ## inline R code fragments ## ## |<br />
-|……………………………………. | 67% ## label: unnamed-chunk-21 ## |<br />
-|………………………………………………………..| 100% ## ordinary text without R code ## output file: codebook.md</p>
+<p>library(plyr); Data2&lt;-aggregate(. ~subject + activity, Data, mean) Data2&lt;-Data2[order(Data2<span class="math inline">\(subject,Data2\)</span>activity),] write.table(Data2, file = “tidydata.txt”,row.name=FALSE) Prouduce Codebook</p>
+<blockquote>
+<p>library(“rmarkdown”) render(“codebook.Rmd”)</p>
+</blockquote>
+<p>processing file: codebook.Rmd |………………………………………………………………..| 100% ordinary text without R code</p>
+<p>output file: codebook.knit.md</p>
+“C:/Users/aervi/DOWNLO~1/anaconda/Scripts/pandoc” +RTS -K512m -RTS codebook.utf8.md –to html4 –from markdown+autolink_bare_uris+tex_math_single_backslash –output codebook.html –lua-filter “C:-library\4.0.lua” –lua-filter “C:-library\4.0-div.lua” –email-obfuscation none –self-contained –standalone –section-divs –template “C:-library\4.0.html” –no-highlight –variable highlightjs=1 –variable “theme:bootstrap” –include-in-header “C:8GT-str1d88256758e9.html” –mathjax –variable “mathjax-url:<a href="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" class="uri">https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</a>” [WARNING] This document format requires a nonempty
+<title>
+<p>element. Defaulting to ‘codebook.utf8’ as the title. To specify a title, use ‘title’ in metadata or –metadata title=“…”.</p>
+<p>Output created: codebook.html</p>
 
 
 
